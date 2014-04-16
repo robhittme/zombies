@@ -14,20 +14,31 @@ function Human(name, weapon) {
 			this.isDead= true;
 
 		}
+		this.health=100;
 
 	};
 	}	
 
-
+function ZombieShit(type, damage) {
+	this.type= type;
+	this.damage = damage;
+	this.attack = function(target) {
+		target.health = target.health - this.damage;
+		if(target.health <=0) {
+			alert("Oh No! " + target.name + " will soon be a zombie!");
+			target.isZombie = true;
+			target.health = 100;
+		}
+	}
+}
 function Weapon(type, damage) {
 	this.type= type || "null"
 	this.damage = damage || 1 ;
 	this.attack = function(target) {
 		target.health = target.health - this.damage;
 		if(target.health <=0) {
-			alert("Oh No! " + target.Human + " will soon be a zombie!");
+			alert("Oh No! " + target.name + " will soon be dead!");
 			target.isDead = true;
-			target.bitten;
 		}
 	}
 }
@@ -42,10 +53,11 @@ function Zombie(name, weapon) {
 
 }
 
-
-var fist= new Weapon("bodily", 50);
-var shotgun= new Weapon("gun",10);
-var bat = new Weapon("club", 50);
-var zom= new Zombie("zom", "fist"); 
+var fist= new ZombieShit("bodily", 10);
+var shotgun= new Weapon("gun",30);
+var bat = new Weapon("club", 15);
+var zom= new Zombie("zom", fist); 
 var robert = new Human("Robert", bat);
 var shawn = new Human("Shawn", shotgun);
+var brooke = new Human("Brooke",bat);
+

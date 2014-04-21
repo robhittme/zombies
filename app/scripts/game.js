@@ -31,9 +31,10 @@
  			 $(".zomhealth").text(zombie.name+":" + zombie.health);
  			 		if(varName.isZombie === true) {
  			 			$(".player img").fadeIn("fast").addClass("show");
- 			 			$(".btn .varName.name").disabled=false;
-
  			}
+ 					if(zombie.isDead === true) {
+ 						$(".second img").fadeIn("fast").addClass("show");
+ 					}
  		});
  		});
     

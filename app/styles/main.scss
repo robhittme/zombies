@@ -4,6 +4,19 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 @import '../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss';
 // endbower
 
+.player{
+    list-style-type: none;
+    text-align: center;
+     
+     img{
+        width: 1500px;
+        height: 1000px;
+        position:relative;
+        right: 400px;
+        top: -600px;
+       -webkit-transition: all 4s ease;
+    }
+}
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -15,6 +28,9 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+    background: black;
+    background-image: url(/images/woods.jpg);
+    background-repeat: none;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -52,7 +68,8 @@ body {
 /* Main marketing message and sign up button */
 .jumbotron {
     text-align: center;
-    border-bottom: 1px solid #e5e5e5;
+    background:rgba(87, 87, 87, 0.7);
+    color: white;
     .btn {
         font-size: 21px;
         padding: 14px 24px;
@@ -90,4 +107,20 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+.show{
+    display: block;
+    -webkit-transition: all 2s ease;
+}
+
+.hide{
+    display:none;
+}
+
+.imgBig{
+
+    float: left;
+    opacity: 1.0;
+    -webkit-transition: all 4s ease;
 }
